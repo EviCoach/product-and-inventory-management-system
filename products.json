@@ -1,0 +1,26 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Garri",
+      "price": 500,
+      "quantity": 20
+    },
+    {
+      "id": 2,
+      "name": "Palm Oil",
+      "price": 40,
+      "quantity": 44
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
