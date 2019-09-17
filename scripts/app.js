@@ -17,6 +17,8 @@ $(document).ready(function () {
     const $addPrice = $("#add-price")
     const $search = $("#search");
     const $searchBar = $("#search-bar");
+    const $deleteModal = $("#deleteModal");
+    let idToDelete = 0;
 
 
     // view all products
@@ -62,29 +64,29 @@ $(document).ready(function () {
         });
         updated = false;
 
-        // trigger click on view products
-        setTimeout(function () {
-            $viewAll.trigger('click');
-        }, 2000);
-        e.preventDefault();
     });
 
 
-
-
-
-    // first delete button
-    $del.on('click', function (e) {
-        // give yourself a random strin attr
-        // and set it on a variable which is equal to its id
-    })
+    // boosttrap show.bs.modal event
+    $('#deleteModal').on('show.bs.modal', function (e) {
+        idToDelete = $(e.relatedTarget).parent().parent().children(0).attr("id");
+        console.log("Hi");
+    });
 
     // delete products
     $deleteBtn.on('click', e => {
-        // get the value from the variable
-        // use it to get its id.
-
-
+        $.ajax({
+            url: 'http://localhost:3000/products/' + idToDelete,
+            error: function () {
+                console.log('Error');
+            },
+            dataType: 'json',
+            success: function (data) {
+                console.log('success');
+            },
+            type: 'DELETE'
+        });
+        return e.preventDefault();
     });
 
 
@@ -119,8 +121,6 @@ $(document).ready(function () {
         });
         updated = false;
 
-        // trigger click on view products
-
 
         $viewAll.trigger('click');
         throw "Error";
@@ -134,7 +134,11 @@ $(document).ready(function () {
             case 'ID':
                 let searchId = $searchBar.val();
                 $.get('http://localhost:3000/products/' + searchId, (data, status) => {
-                    let searchResult = $('<tr><th scope="row" id="' + data.id + '">' + data.id + '</th><td>' + data.name + '</td><td>' + data.quantity + '</td><td>' + data.price + '</td><td><button type="button" class="btn btn-sm btn-dark" data-toggle="modal" data-target="#deleteModal" id="del">Delete Product</button></td></tr>');
+                    let searchResult = $('<tr><th scope="row" id="' + data.id + '">'
+                        + data.id
+                        + '</th><td>'
+                        + data.name + '</td><td>' + data.quantity + '</td><td>'
+                        + data.price + '</td><td><button type="button" class="btn btn-sm btn-dark" data-toggle="modal" data-target="#deleteModal" id="del">Delete Product</button></td></tr>');
                     $("#table-body").append(searchResult);
 
                 });
@@ -144,7 +148,10 @@ $(document).ready(function () {
 
                 $.get('http://localhost:3000/products?name=' + searchName, (data, status) => {
                     for (let index = 0; index < data.length; index++) {
-                        let eachRow = $('<tr><th scope="row" id="' + data[index].id + '">' + data[index].id + '</th><td>' + data[index].name + '</td><td>' + data[index].quantity + '</td><td>' + data[index].price + '</td><td><button type="button" class="btn btn-sm btn-dark" data-toggle="modal" data-target="#deleteModal" id="del">Delete Product</button></td></tr>');
+                        let eachRow = $('<tr><th scope="row" id="' + data[index].id
+                            + '">' + data[index].id
+                            + '</th><td>' + data[index].name + '</td><td>'
+                            + data[index].quantity + '</td><td>' + data[index].price + '</td><td><button type="button" class="btn btn-sm btn-dark" data-toggle="modal" data-target="#deleteModal" id="del">Delete Product</button></td></tr>');
                         $("#table-body").append(eachRow);
                     }
 
@@ -164,12 +171,10 @@ $(document).ready(function () {
                 $.get('http://localhost:3000/products?quantity=' + searchQuantity, (data, status) => {
                     for (let index = 0; index < data.length; index++) {
                         let eachRow = $('<tr><th scope="row" id="' + data[index].id + '">' + data[index].id + '</th><td>' + data[index].name + '</td><td>' + data[index].quantity + '</td><td>' + data[index].price + '</td><td><button type="button" class="btn btn-sm btn-dark" data-toggle="modal" data-target="#deleteModal" id="del">Delete Product</button></td></tr>');
-                        $("#table-body").append(eachRow);
+                        $("#table-body").replaceWidth(eachRow);
                     }
                 });
                 break;
         }
     });
-
-
 });
