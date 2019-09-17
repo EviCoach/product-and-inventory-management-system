@@ -22,81 +22,47 @@
 
 <body>
     <div class="container">
-        <nav class="navbar navbar-light bg-light">
-            <a class="navbar-brand" style="font-size: 1.5em; font-weight:bold; font-family: Cinzel">Home</a>
-            <form class="form-inline" id="nav-bar-search-form">
-                <input class="form-control mr-sm-2" id="nav-bar-search-input" type="search"
-                    placeholder="Search products by name" aria-label="Search">
-                <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
-            </form>
-        </nav>
 
-        <div class="jumbotron">
+        <div class="list-group my-5">
 
-            <h1 class="" style="text-align: center; color: white; font-family: Cinzel">Product and Inventory Managment
-                System</h1>
+            <a href="#"
+                class="list-group-item list-group-item-action list-group-item-primary d-flex justify-content-between">
+                <span>ID</span>
+                <span>Name</span>
+                <span>Price</span>
+                <span>Quantity</span>
+                <button class="btn btn-sm btn-primary" data-toggle="modal"
+                    data-target="#exampleModalCenter">Delete</button>
+            </a>
 
-        </div>
-
-        <div class="card col-sm-12 col-md-8 col-lg-4"></div>
-
-        <form>
-            <div class="form-row">
-                <div class="col-7">
-                    <input type="text" class="form-control" placeholder="Name of product">
-                </div>
-                <div class="col">
-                    <input type="text" class="form-control" placeholder="Price">
-                </div>
-                <div class="col">
-                    <input type="text" class="form-control" placeholder="Quantity">
-                </div>
-                <div class="col">
-                    <button class="btn btn-md btn-primary">Update Product</button>
-                </div>
+            <div
+                class="shadow-sm p-3 mb-2 bg-white rounded list-group-item list-group-item-action list-group-item-primary d-flex justify-content-between">
+                <span>#1</span>
+                <span>Oil and gas</span>
+                <span>N8000</span>
+                <span>400</span>
+                <button class="btn btn-sm btn-primary" data-toggle="modal"
+                    data-target="#exampleModalCenter">Delete</button>
             </div>
-        </form>
+            <div
+                class="shadow-sm p-3 mb-2 bg-white rounded list-group-item list-group-item-action list-group-item-primary d-flex justify-content-between">
+                <span>#2</span>
+                <span>Garri</span>
+                <span>N40</span>
+                <span>900</span>
+                <button class="btn btn-sm btn-primary" data-toggle="modal"
+                    data-target="#exampleModalCenter">Delete</button>
+            </div>
+            <div
+                class="shadow-sm p-3 mb-2 bg-white rounded list-group-item list-group-item-action list-group-item-primary d-flex justify-content-between">
+                <span>#3</span>
+                <span>Petroleum</span>
+                <span>N50000000000</span>
+                <span>4 barrels</span>
+                <button class="btn btn-sm btn-primary" data-toggle="modal"
+                    data-target="#exampleModalCenter">Delete</button>
+            </div>
 
-        <div class="list-group my-3">
-            <a href="#" class="list-group-item list-group-item-action active">
-                <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">List group item heading</h5>
-                    <small>3 days ago</small>
-                </div>
-                <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius
-                    blandit.</p>
-                <small>Donec id elit non mi porta.</small>
-            </a>
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-                Delete Product
-            </button>
-
-            <a href="#" class="list-group-item list-group-item-action">
-                <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">List group item heading</h5>
-                    <small class="text-muted">3 days ago</small>
-                </div>
-                <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius
-                    blandit.</p>
-                <small class="text-muted">Donec id elit non mi porta.</small>
-            </a>
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-                Delete Product
-            </button>
-
-
-            <a href="#" class="list-group-item list-group-item-action">
-                <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">List group item heading</h5>
-                    <small class="text-muted">3 days ago</small>
-                </div>
-                <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius
-                    blandit.</p>
-                <small class="text-muted">Donec id elit non mi porta.</small>
-            </a>
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-                Delete Product
-            </button>
         </div>
         <!-- Button trigger modal -->
         <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
