@@ -23,31 +23,27 @@
 
 <body>
     <div class="container">
-        <!-- <div class="jumbotron">
-            <h2>Product and Inventory Management System</h2>
-        </div> -->
+
         <!-- Search form -->
         <div class="input-group mb-3 mt-5">
             <div class="input-group-append">
                 <button class="btn btn-dark input-group-text" id="view-all">products</button>
             </div>
 
-            <input type="text" class="form-control" placeholder="Search products by name"
+            <input type="text" class="form-control" id="search-bar" placeholder="Search products by name"
                 aria-label="Recipient's username" aria-describedby="basic-addon2">
             <div class="input-group-append">
                 <div class="input-group <!--mb-3-->">
-                    <select class="custom-select" id="inputGroupSelect02">
+                    <select class="custom-select" id="search-options">
                         <option selected>Search by</option>
-                        <option value="1">ID</option>
-                        <option value="2">Name</option>
-                        <option value="2">Price</option>
-                        <option value="3">Quantity</option>
+                        <option value="ID">ID</option>
+                        <option value="Name">Name</option>
+                        <option value="Price">Price</option>
+                        <option value="Quantity">Quantity</option>
                     </select>
-                    <!-- <div class="input-group-append">
-                        <label class="input-group-text" for="inputGroupSelect02">Options</label>
-                    </div> -->
+
                 </div>
-                <button class="btn btn-dark input-group-text" id="basic-addon2">Search</button>
+                <button class="btn btn-dark  input-group-text" id="search">Search</button>
             </div>
             <div class="input-group-append">
                 <button type="button" class="btn btn-sm btn-dark" data-toggle="modal" data-target="#exampleModal"
@@ -67,7 +63,7 @@
                     <th scope="col" class="thead-dark">Name</th>
                     <th scope="col" class="thead-dark">Price</th>
                     <th scope="col" class="thead-dark">Quantity</th>
-                    <th scope="col" class="thead-dark"><button type="button" class="btn btn-sm btn-primary"
+                    <th scope="col" class="thead-dark"><button type="button" class="btn btn-sm btn-info"
                             data-toggle="modal" data-target="#addProductModal" data-whatever="@mdo" id="add-btn">Add
                             Product</button>
                     </th>

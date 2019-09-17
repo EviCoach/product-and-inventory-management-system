@@ -15,6 +15,8 @@ $(document).ready(function () {
     const $addName = $("#add-name");
     const $addQty = $("#add-quantity");
     const $addPrice = $("#add-price")
+    const $search = $("#search");
+    const $searchBar = $("#search-bar");
 
 
     // view all products
@@ -123,6 +125,50 @@ $(document).ready(function () {
         $viewAll.trigger('click');
         throw "Error";
 
+    });
+
+
+    $search.on('click', e => {
+        let searchOptions = $('#search-options').val();
+        switch (searchOptions) {
+            case 'ID':
+                let searchId = $searchBar.val();
+                $.get('http://localhost:3000/products/' + searchId, (data, status) => {
+                    let searchResult = $('<tr><th scope="row" id="' + data.id + '">' + data.id + '</th><td>' + data.name + '</td><td>' + data.quantity + '</td><td>' + data.price + '</td><td><button type="button" class="btn btn-sm btn-dark" data-toggle="modal" data-target="#deleteModal" id="del">Delete Product</button></td></tr>');
+                    $("#table-body").append(searchResult);
+
+                });
+                break;
+            case 'Name':
+                let searchName = $searchBar.val();
+
+                $.get('http://localhost:3000/products?name=' + searchName, (data, status) => {
+                    for (let index = 0; index < data.length; index++) {
+                        let eachRow = $('<tr><th scope="row" id="' + data[index].id + '">' + data[index].id + '</th><td>' + data[index].name + '</td><td>' + data[index].quantity + '</td><td>' + data[index].price + '</td><td><button type="button" class="btn btn-sm btn-dark" data-toggle="modal" data-target="#deleteModal" id="del">Delete Product</button></td></tr>');
+                        $("#table-body").append(eachRow);
+                    }
+
+                });
+                break;
+            case 'Price':
+                let searchPrice = $searchBar.val();
+                $.get('http://localhost:3000/products?price=' + searchPrice, (data, status) => {
+                    for (let index = 0; index < data.length; index++) {
+                        let eachRow = $('<tr><th scope="row" id="' + data[index].id + '">' + data[index].id + '</th><td>' + data[index].name + '</td><td>' + data[index].quantity + '</td><td>' + data[index].price + '</td><td><button type="button" class="btn btn-sm btn-dark" data-toggle="modal" data-target="#deleteModal" id="del">Delete Product</button></td></tr>');
+                        $("#table-body").append(eachRow);
+                    }
+                });
+                break;
+            case 'Quantity':
+                let searchQuantity = $searchBar.val();
+                $.get('http://localhost:3000/products?quantity=' + searchQuantity, (data, status) => {
+                    for (let index = 0; index < data.length; index++) {
+                        let eachRow = $('<tr><th scope="row" id="' + data[index].id + '">' + data[index].id + '</th><td>' + data[index].name + '</td><td>' + data[index].quantity + '</td><td>' + data[index].price + '</td><td><button type="button" class="btn btn-sm btn-dark" data-toggle="modal" data-target="#deleteModal" id="del">Delete Product</button></td></tr>');
+                        $("#table-body").append(eachRow);
+                    }
+                });
+                break;
+        }
     });
 
 
