@@ -7,52 +7,16 @@
       "quantity": "89"
     },
     {
-      "id": 2,
-      "name": "Palm Oil",
-      "price": 40,
-      "quantity": 44
-    },
-    {
-      "name": "Juju",
-      "quantity": "7",
-      "price": "559.0",
-      "id": 4
-    },
-    {
-      "name": "asdfas",
-      "quantity": "444",
-      "price": "56",
-      "id": 7
-    },
-    {
-      "name": "Maize",
-      "quantity": "444",
-      "price": "67.2",
-      "id": 8
-    },
-    {
-      "name": "Maize",
-      "quantity": "01",
-      "price": "67.2",
-      "id": 9
-    },
-    {
-      "name": "Maize",
-      "quantity": "45",
-      "price": "67.2",
-      "id": 10
-    },
-    {
-      "name": "aklsjdfkjaslkdjalksjdlfjalskdjflasdjlafjsdlkfsdjf",
-      "quantity": "454",
-      "price": "223",
-      "id": 11
-    },
-    {
       "id": 12,
       "name": "Soya Beans",
       "price": "7",
       "quantity": "67.2"
+    },
+    {
+      "name": "Hairy Flames",
+      "quantity": "45",
+      "price": "2 million Dollars",
+      "id": 13
     }
   ],
   "comments": [

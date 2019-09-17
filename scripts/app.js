@@ -9,7 +9,6 @@ $(document).ready(function () {
     const $updatePrice = $("#update-price");
     const $updateQty = $("#update-quantity");
     const $deleteBtn = $("#delete-btn");
-    const $del = $("#del");
     const $addBtn = $("#add-btn");
     const $dialogAdd = $("#add-pr");
     const $addName = $("#add-name");
@@ -29,11 +28,9 @@ $(document).ready(function () {
                     let eachRow = $('<tr><th scope="row" id="' + data[index].id + '">' + data[index].id + '</th><td>' + data[index].name + '</td><td>' + data[index].quantity + '</td><td>' + data[index].price + '</td><td><button type="button" class="btn btn-sm btn-dark" data-toggle="modal" data-target="#deleteModal" id="del">Delete Product</button></td></tr>');
                     $("#table-body").append(eachRow);
                 }
-
             });
             updated = !updated;
         }
-
     });
 
     // update product
@@ -63,14 +60,13 @@ $(document).ready(function () {
             type: 'PUT'
         });
         updated = false;
-
     });
 
 
     // boosttrap show.bs.modal event
     $('#deleteModal').on('show.bs.modal', function (e) {
-        idToDelete = $(e.relatedTarget).parent().parent().children(0).attr("id");
-        console.log("Hi");
+        idToDelete = $(e.relatedTarget)
+            .parent().parent().children(0).attr("id");
     });
 
     // delete products
@@ -86,10 +82,7 @@ $(document).ready(function () {
             },
             type: 'DELETE'
         });
-        return e.preventDefault();
     });
-
-
 
 
     // button to add products
