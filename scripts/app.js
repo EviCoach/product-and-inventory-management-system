@@ -1,14 +1,14 @@
-function newProduct() { }
-function readAllProducts() { }
-function updateProducts() { }
-function deleteProducts() { }
-function fetchOne() { }
-
 $(document).ready(function () {
-    
+
     let updated = false;
 
     const $viewAll = $("#view-all");
+    const $updateBtn = $("#update-btn");
+    const $updateId = $("#update-id");
+    const $updateName = $("#update-name");
+    const $updatePrice = $("#update-price");
+    const $updateQty = $("#update-quantity");
+
 
     // view all products
     $viewAll.on('click', e => {
@@ -26,5 +26,37 @@ $(document).ready(function () {
     });
 
     // update product
+    $updateBtn.on('click', e => {
+        let id = $updateId.attr("id");
+        let name = $updateName.attr("name");
+        let price = $updatePrice.attr("price");
+        let quantity = $updateQty.val("quantity");
+
+        let obj = {};
+        obj[id] = $updateId.val();
+        obj[name] = $updateName.val();
+        obj[price] = $updatePrice.val();
+        obj[quantity] = $updatedQty.val();
+
+        // $.post('http://localhost:3000/products/1', obj, (data, status) => {
+        //     console.log(data);
+        // });
+        $.ajax({
+            url: 'http://localhost:3000/products/1',
+            data: obj,
+            error: function () {
+                console.log('Error');
+            },
+            dataType: 'json',
+            success: function (data) {
+                console.log('success');
+            },
+            type: 'PUT'
+        });
+        updated = false;
+        e.preventDefault();
+        e.stopPropagation();
+    });
+
 
 });

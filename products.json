@@ -2,9 +2,9 @@
   "products": [
     {
       "id": 1,
-      "name": "Garri",
-      "price": 500,
-      "quantity": 20
+      "name": "Semo",
+      "price": "4",
+      "quantity": "2"
     },
     {
       "id": 2,
