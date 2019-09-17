@@ -8,6 +8,7 @@ $(document).ready(function () {
     const $updateName = $("#update-name");
     const $updatePrice = $("#update-price");
     const $updateQty = $("#update-quantity");
+    
 
 
     // view all products
@@ -27,20 +28,18 @@ $(document).ready(function () {
 
     // update product
     $updateBtn.on('click', e => {
-        let id = $updateId.attr("id");
+        let id = $updateId.attr("name");
         let name = $updateName.attr("name");
-        let price = $updatePrice.attr("price");
-        let quantity = $updateQty.val("quantity");
+        let price = $updatePrice.attr("name");
+        let quantity = $updateQty.attr("name");
 
         let obj = {};
         obj[id] = $updateId.val();
         obj[name] = $updateName.val();
         obj[price] = $updatePrice.val();
-        obj[quantity] = $updatedQty.val();
+        obj[quantity] = $updateQty.val();
 
-        // $.post('http://localhost:3000/products/1', obj, (data, status) => {
-        //     console.log(data);
-        // });
+        // issue: how to update only values that are given
         $.ajax({
             url: 'http://localhost:3000/products/1',
             data: obj,
@@ -54,9 +53,10 @@ $(document).ready(function () {
             type: 'PUT'
         });
         updated = false;
-        e.preventDefault();
-        e.stopPropagation();
     });
+
+
+
 
 
 });
