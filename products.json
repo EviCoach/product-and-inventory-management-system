@@ -2,14 +2,75 @@
   "products": [
     {
       "id": 1,
-      "name": "Melon",
-      "quantity": "444"
+      "name": "Maize",
+      "price": "76.2",
+      "quantity": "89"
     },
     {
       "id": 2,
       "name": "Palm Oil",
       "price": 40,
       "quantity": 44
+    },
+    {
+      "name": "Beast",
+      "quantity": "5000",
+      "price": "10.10",
+      "id": 3
+    },
+    {
+      "name": "Juju",
+      "quantity": "7",
+      "price": "559.0",
+      "id": 4
+    },
+    {
+      "name": "ldjlasdkjal",
+      "quantity": "678",
+      "price": "789",
+      "id": 5
+    },
+    {
+      "name": "asjdlkfajsl",
+      "quantity": "444",
+      "price": "67.2",
+      "id": 6
+    },
+    {
+      "name": "asdfas",
+      "quantity": "444",
+      "price": "56",
+      "id": 7
+    },
+    {
+      "name": "Maize",
+      "quantity": "444",
+      "price": "67.2",
+      "id": 8
+    },
+    {
+      "name": "Maize",
+      "quantity": "01",
+      "price": "67.2",
+      "id": 9
+    },
+    {
+      "name": "Maize",
+      "quantity": "45",
+      "price": "67.2",
+      "id": 10
+    },
+    {
+      "name": "aklsjdfkjaslkdjalksjdlfjalskdjflasdjlafjsdlkfsdjf",
+      "quantity": "454",
+      "price": "223",
+      "id": 11
+    },
+    {
+      "id": 12,
+      "name": "Soya Beans",
+      "price": "7",
+      "quantity": "67.2"
     }
   ],
   "comments": [
