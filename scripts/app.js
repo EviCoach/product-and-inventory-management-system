@@ -1,3 +1,19 @@
+function viewAll() {
+    let $tableBody = $('<tbody id="table-body"></tbody>');
+    $.get('http://localhost:3000/products', function (data, status) {
+        for (let index = 0; index < data.length; index++) {
+            let eachRow = $('<tr><th scope="row" id="' + data[index].id + '">' + data[index].id + '</th><td>' + data[index].name + '</td><td>' + data[index].price + '</td><td>' + data[index].quantity + '</td><td><button type="button" class="btn btn-sm btn-dark" data-toggle="modal" data-target="#deleteModal" id="del">Delete Product</button></td></tr>');
+            $tableBody.append(eachRow);
+        }
+    });
+
+    $("#table-body").replaceWith($tableBody);
+}
+
+function searchViewRefresh() {
+
+}
+
 $(document).ready(function () {
 
     let updated = false;
@@ -23,12 +39,16 @@ $(document).ready(function () {
     // view all products
     $viewAll.on('click', e => {
         if (!updated) {
-            $.get('http://localhost:3000/products', function (data, status) {
-                for (let index = 0; index < data.length; index++) {
-                    let eachRow = $('<tr><th scope="row" id="' + data[index].id + '">' + data[index].id + '</th><td>' + data[index].name + '</td><td>' + data[index].quantity + '</td><td>' + data[index].price + '</td><td><button type="button" class="btn btn-sm btn-dark" data-toggle="modal" data-target="#deleteModal" id="del">Delete Product</button></td></tr>');
-                    $("#table-body").append(eachRow);
-                }
-            });
+            // $.get('http://localhost:3000/products', function (data, status) {
+            //     // let $tableBody = $('<tbody id="table-body"></tbody>');
+            //     // for (let index = 0; index < data.length; index++) {
+            //     //     let eachRow = $('<tr><th scope="row" id="' + data[index].id + '">' + data[index].id + '</th><td>' + data[index].name + '</td><td>' + data[index].price + '</td><td>' + data[index].quantity + '</td><td><button type="button" class="btn btn-sm btn-dark" data-toggle="modal" data-target="#deleteModal" id="del">Delete Product</button></td></tr>');
+            //     //     $tableBody.append(eachRow);
+            //     // }
+            //     // $("#table-body").replaceWith($tableBody);
+            //     viewAll(data);
+            // });
+            viewAll();
             updated = !updated;
         }
     });
@@ -60,6 +80,9 @@ $(document).ready(function () {
             type: 'PUT'
         });
         updated = false;
+        // call function viewAll(); to display all the products
+        viewAll();
+        return e.preventDefault();
     });
 
 
@@ -82,15 +105,15 @@ $(document).ready(function () {
             },
             type: 'DELETE'
         });
+        // call function view all to display all the products
+        viewAll();
+        return e.preventDefault();
     });
 
 
-    // button to add products
-    $addBtn.on('click', e => {
-        console.log("add button working");
-    })
-
+    // add products
     $dialogAdd.on('click', e => {
+
         let obj = {};
         let name = $addName.attr("name");
         let price = $addPrice.attr("name");
@@ -114,10 +137,9 @@ $(document).ready(function () {
         });
         updated = false;
 
-
-        $viewAll.trigger('click');
-        throw "Error";
-
+        // call function viewAll() to display all the products
+        viewAll();
+        return false;
     });
 
 
@@ -126,46 +148,59 @@ $(document).ready(function () {
         switch (searchOptions) {
             case 'ID':
                 let searchId = $searchBar.val();
+                let $searchResultBody = $('<tbody id="table-body"></tbody>');
+
                 $.get('http://localhost:3000/products/' + searchId, (data, status) => {
                     let searchResult = $('<tr><th scope="row" id="' + data.id + '">'
                         + data.id
                         + '</th><td>'
                         + data.name + '</td><td>' + data.quantity + '</td><td>'
                         + data.price + '</td><td><button type="button" class="btn btn-sm btn-dark" data-toggle="modal" data-target="#deleteModal" id="del">Delete Product</button></td></tr>');
-                    $("#table-body").append(searchResult);
+                    $searchResultBody.append(searchResult);
+                    $("#table-body").replaceWith($searchResultBody);
 
                 });
                 break;
             case 'Name':
                 let searchName = $searchBar.val();
-
+                let $searchByNameResultBody = $('<tbody id="table-body"></tbody>');
                 $.get('http://localhost:3000/products?name=' + searchName, (data, status) => {
                     for (let index = 0; index < data.length; index++) {
                         let eachRow = $('<tr><th scope="row" id="' + data[index].id
                             + '">' + data[index].id
                             + '</th><td>' + data[index].name + '</td><td>'
                             + data[index].quantity + '</td><td>' + data[index].price + '</td><td><button type="button" class="btn btn-sm btn-dark" data-toggle="modal" data-target="#deleteModal" id="del">Delete Product</button></td></tr>');
-                        $("#table-body").append(eachRow);
+                        $searchByNameResultBody.append(eachRow);
                     }
+                    $("#table-body").replaceWith($searchByNameResultBody);
+
 
                 });
                 break;
             case 'Price':
                 let searchPrice = $searchBar.val();
+                let $searchByPriceResultBody = $('<tbody id="table-body"></tbody>');
+
                 $.get('http://localhost:3000/products?price=' + searchPrice, (data, status) => {
                     for (let index = 0; index < data.length; index++) {
                         let eachRow = $('<tr><th scope="row" id="' + data[index].id + '">' + data[index].id + '</th><td>' + data[index].name + '</td><td>' + data[index].quantity + '</td><td>' + data[index].price + '</td><td><button type="button" class="btn btn-sm btn-dark" data-toggle="modal" data-target="#deleteModal" id="del">Delete Product</button></td></tr>');
-                        $("#table-body").append(eachRow);
+                        $searchByPriceResultBody.append(eachRow);
                     }
+                    $("#table-body").replaceWith($searchByPriceResultBody);
+
                 });
                 break;
             case 'Quantity':
                 let searchQuantity = $searchBar.val();
+                let $searchByQuantityResultBody = $('<tbody id="table-body"></tbody>');
+
                 $.get('http://localhost:3000/products?quantity=' + searchQuantity, (data, status) => {
                     for (let index = 0; index < data.length; index++) {
                         let eachRow = $('<tr><th scope="row" id="' + data[index].id + '">' + data[index].id + '</th><td>' + data[index].name + '</td><td>' + data[index].quantity + '</td><td>' + data[index].price + '</td><td><button type="button" class="btn btn-sm btn-dark" data-toggle="modal" data-target="#deleteModal" id="del">Delete Product</button></td></tr>');
-                        $("#table-body").replaceWidth(eachRow);
+                        $searchByQuantityResultBody.append(eachRow);
                     }
+                    $("#table-body").replaceWidth($searchByQuantityResultBody);
+
                 });
                 break;
         }
