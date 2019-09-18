@@ -17,7 +17,7 @@
 
 <body>
 
-    <div class="d-md-flex h-md-100 align-items-center">
+    <div class="col col-sm-12 d-md-flex h-md-100 align-items-center">
 
         <!-- First Half -->
 
@@ -47,16 +47,16 @@
                 <form id="login-form" class="p-5">
                     <div class="form-group">
                         <label for="email">Email address:</label>
-                        <input type="email" class="form-control" id="email">
+                        <input type="email" class="form-control" id="user-email">
                     </div>
                     <div class="form-group">
                         <label for="pwd">Password:</label>
-                        <input type="password" class="form-control" id="pwd">
+                        <input type="password" class="form-control" id="user-pwd">
                     </div>
                     <!-- <div class="checkbox">
                         <label><input type="checkbox"> Remember me</label>
                     </div> -->
-                    <button type="submit" class="btn btn-dark">Submit</button>
+                    <button type="submit" class="btn btn-dark" id="submit-btn">Submit</button>
                 </form>
             </div>
         </div>
@@ -73,6 +73,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+    <script src="scripts/login.js"></script>
 </body>
 
 </html>

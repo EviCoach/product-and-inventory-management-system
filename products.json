@@ -1,16 +1,10 @@
 {
   "products": [
     {
-      "name": "Mobile Phones",
-      "price": "14.8",
-      "quantity": "200",
-      "id": 15
-    },
-    {
-      "name": "Maize",
-      "price": "35.33",
-      "quantity": "89",
-      "id": 16
+      "id": 16,
+      "name": "Cereal",
+      "price": "10.88",
+      "quantity": "989"
     },
     {
       "name": "Corn",
@@ -29,13 +23,24 @@
       "price": "56.88",
       "quantity": "1000",
       "id": 19
+    },
+    {
+      "name": "Petroleum",
+      "price": "100.99",
+      "quantity": "1000",
+      "id": 20
     }
   ],
-  "comments": [
+  "admin": [
     {
       "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "email": "evicoach@gmail.com",
+      "password": "evi"
+    },
+    {
+      "id": 2,
+      "email": "every@body.com",
+      "password": "everybody"
     }
   ],
   "profile": {

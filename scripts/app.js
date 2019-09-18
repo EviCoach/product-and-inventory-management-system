@@ -82,7 +82,7 @@ $(document).ready(function () {
         updated = false;
         // call function viewAll(); to display all the products
         viewAll();
-        return e.preventDefault();
+        e.preventDefault();
     });
 
 
