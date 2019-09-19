@@ -1,22 +1,64 @@
 {
   "products": [
     {
-      "name": "Maize",
-      "price": "56.99",
-      "quantity": "500",
+      "name": "Ford Cars",
+      "price": "44 million",
+      "quantity": "2",
       "id": 1
     },
     {
-      "name": "Bitcoin",
-      "price": "20000",
-      "quantity": "4",
+      "name": "Venza",
+      "price": "3 million",
+      "quantity": "1",
+      "id": 2
+    },
+    {
+      "name": "Benz",
+      "price": "8 million",
+      "quantity": "1",
       "id": 3
     },
     {
-      "name": "Coal",
-      "price": "44000",
-      "quantity": "90000",
+      "name": "Toyota Camry",
+      "price": "1.2 million",
+      "quantity": "1",
       "id": 4
+    },
+    {
+      "name": "Benz Formatic",
+      "price": "17 million",
+      "quantity": "1",
+      "id": 5
+    },
+    {
+      "name": "Jaguar",
+      "price": "28 million",
+      "quantity": "3",
+      "id": 6
+    },
+    {
+      "name": "Land Rover",
+      "price": "25 million",
+      "quantity": "3",
+      "id": 7
+    },
+    {
+      "name": "Range Rover",
+      "price": "9 million",
+      "quantity": "2",
+      "id": 8
+    },
+    {
+      "name": "Flying Cars",
+      "price": "98 million",
+      "quantity": "1",
+      "id": 9
+    },
+    {
+      "name": "Self Driving Cars",
+      "price": "17 million",
+      "quantity": "4",
+      "id": 10
     }
   ],
   "admin": [

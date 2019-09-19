@@ -39,10 +39,10 @@
                 <div class="input-group <!--mb-3-->">
                     <select class="custom-select" id="search-options">
                         <option selected>Search by</option>
-                        <option value="ID">ID</option>
-                        <option value="Name">Name</option>
-                        <option value="Price">Price</option>
-                        <option value="Quantity">Quantity</option>
+                        <option value="id">ID</option>
+                        <option value="name">Name</option>
+                        <option value="price">Price</option>
+                        <option value="quantity">Quantity</option>
                     </select>
 
                 </div>
@@ -88,7 +88,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="javascript:void(0)">
+                    <form>
                         <div class="form-group">
                             <label for="product-name" class="col-form-label">Product name</label>
                             <input type="text" class="form-control" id="add-name" name="name">
@@ -105,7 +105,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-dark" id="add-pr">Add product</button>
+                    <button type="button" class="btn btn-dark" id="add-pr" data-dismiss="modal">Add product</button>
                 </div>
             </div>
         </div>
@@ -146,7 +146,7 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal"
                         id="close-update-btn">Close</button>
-                    <button type="button" class="btn btn-dark" id="update-btn">Update</button>
+                    <button type="button" class="btn btn-dark" id="update-btn" data-dismiss="modal">Update</button>
                 </div>
             </div>
         </div>
@@ -169,7 +169,7 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal"
                         id="del-btn-cancel">Cancel</button>
-                    <button type="button" class="btn btn-dark" id="delete-btn">Delete</button>
+                    <button type="button" class="btn btn-dark" id="delete-btn" data-dismiss="modal">Delete</button>
                 </div>
             </div>
         </div>

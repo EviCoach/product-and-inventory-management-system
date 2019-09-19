@@ -1,6 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Be+Vietnam|Cinzel&display=swap');
+
 @media (min-width: 768px) {
-    .h-md-100 { height: 100vh; }
+    .h-md-100 { height: 70vh; vertical-align: middle;
+    margin-top: 50;
+/* border: 2px solid red; */
+}
+}
+body{
+    vertical-align: middle;
 }
 
 #login-form{
@@ -9,7 +16,7 @@
 }
  
 .btn-round { border-radius: 30px; }
-.bg-indigo { background: #212121;
+.bg-indigo {margin-top: 50; background: #212121;
     font-family: Cinzel;
 background-image: url("../assets/blur-background-img.jpg")
 }
