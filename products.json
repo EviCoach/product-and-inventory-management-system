@@ -1,34 +1,22 @@
 {
   "products": [
     {
-      "id": 16,
-      "name": "Cereal",
-      "price": "10.88",
-      "quantity": "989"
-    },
-    {
-      "name": "Corn",
-      "price": "34.4",
+      "name": "Maize",
+      "price": "56.99",
       "quantity": "500",
-      "id": 17
+      "id": 1
     },
     {
-      "name": "Corn",
-      "price": "53.0",
-      "quantity": "88",
-      "id": 18
+      "name": "Bitcoin",
+      "price": "20000",
+      "quantity": "4",
+      "id": 3
     },
     {
-      "name": "Corn",
-      "price": "56.88",
-      "quantity": "1000",
-      "id": 19
-    },
-    {
-      "name": "Petroleum",
-      "price": "100.99",
-      "quantity": "1000",
-      "id": 20
+      "name": "Coal",
+      "price": "44000",
+      "quantity": "90000",
+      "id": 4
     }
   ],
   "admin": [

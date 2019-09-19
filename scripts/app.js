@@ -2,7 +2,11 @@ function viewAll() {
     let $tableBody = $('<tbody id="table-body"></tbody>');
     $.get('http://localhost:3000/products', function (data, status) {
         for (let index = 0; index < data.length; index++) {
-            let eachRow = $('<tr><th scope="row" id="' + data[index].id + '">' + data[index].id + '</th><td>' + data[index].name + '</td><td>' + data[index].price + '</td><td>' + data[index].quantity + '</td><td><button type="button" class="btn btn-sm btn-dark" data-toggle="modal" data-target="#deleteModal" id="del">Delete Product</button></td></tr>');
+            let eachRow = $('<tr><th scope="row" id="' + data[index].id + '">'
+                + data[index].id + '</th><td>' + data[index].name
+                + '</td><td>' + data[index].price + '</td><td>'
+                + data[index].quantity
+                + '</td><td><button type="button" class="btn btn-sm btn-dark" data-toggle="modal" data-target="#deleteModal" id="del">Delete Product</button></td></tr>');
             $tableBody.append(eachRow);
         }
     });
@@ -10,9 +14,9 @@ function viewAll() {
     $("#table-body").replaceWith($tableBody);
 }
 
-function searchViewRefresh() {
-
-}
+$(window).on('load', (e) => {
+    viewAll();
+});
 
 $(document).ready(function () {
 
@@ -39,15 +43,6 @@ $(document).ready(function () {
     // view all products
     $viewAll.on('click', e => {
         if (!updated) {
-            // $.get('http://localhost:3000/products', function (data, status) {
-            //     // let $tableBody = $('<tbody id="table-body"></tbody>');
-            //     // for (let index = 0; index < data.length; index++) {
-            //     //     let eachRow = $('<tr><th scope="row" id="' + data[index].id + '">' + data[index].id + '</th><td>' + data[index].name + '</td><td>' + data[index].price + '</td><td>' + data[index].quantity + '</td><td><button type="button" class="btn btn-sm btn-dark" data-toggle="modal" data-target="#deleteModal" id="del">Delete Product</button></td></tr>');
-            //     //     $tableBody.append(eachRow);
-            //     // }
-            //     // $("#table-body").replaceWith($tableBody);
-            //     viewAll(data);
-            // });
             viewAll();
             updated = !updated;
         }
@@ -80,9 +75,6 @@ $(document).ready(function () {
             type: 'PUT'
         });
         updated = false;
-        // call function viewAll(); to display all the products
-        viewAll();
-        e.preventDefault();
     });
 
 
@@ -105,9 +97,6 @@ $(document).ready(function () {
             },
             type: 'DELETE'
         });
-        // call function view all to display all the products
-        viewAll();
-        return e.preventDefault();
     });
 
 
@@ -136,10 +125,6 @@ $(document).ready(function () {
             type: 'POST'
         });
         updated = false;
-
-        // call function viewAll() to display all the products
-        viewAll();
-        return false;
     });
 
 
