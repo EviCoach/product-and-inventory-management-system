@@ -29,6 +29,11 @@
       "id": 2,
       "email": "every@body.com",
       "password": "everybody"
+    },
+    {
+      "id": "2",
+      "email": "decadev@decagon.com",
+      "password": "decadev"
     }
   ],
   "profile": {

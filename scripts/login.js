@@ -16,4 +16,15 @@ $(document).ready(function () {
         });
         e.preventDefault();
     });
+
+    // clear the history so unauthorized users can't use it to login
+    // $(window).on('load', (e) => {
+    //     history.clear();
+    // });
+
+    // prevent the back button
+    $(window).on('beforeunload', (e) => {
+        e.preventDefault();
+        
+    });
 });

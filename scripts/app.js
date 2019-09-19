@@ -37,6 +37,7 @@ $(document).ready(function () {
     const $search = $("#search");
     const $searchBar = $("#search-bar");
     const $deleteModal = $("#deleteModal");
+    const $logOut = $("#log-out");
     let idToDelete = 0;
 
 
@@ -189,5 +190,9 @@ $(document).ready(function () {
                 });
                 break;
         }
+    });
+    $logOut.on('click', e => {
+        location.replace("login.html");
+        e.preventDefault();
     });
 });
