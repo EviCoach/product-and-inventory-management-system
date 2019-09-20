@@ -68,11 +68,6 @@ function toIDsearchUI() {
     });
 } // end of toIDsearchUI
 
-
-// $(window).on('load', (e) => {
-//     viewAll();
-// });
-
 $(document).ready(function () {
     const $viewAll = $("#view-all");
     const $updateBtn = $("#update-btn");
