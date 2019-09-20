@@ -1,3 +1,4 @@
+var updated = false;
 function viewAll() {
     let $tableBody = $('<tbody id="table-body"></tbody>');
     $.get('http://localhost:3000/products', function (data, status) {
@@ -30,7 +31,6 @@ async function deleteProduct(idToDelete) {
     await viewAll();
 }
 
-
 function toUI() {
     updated = false;
     let searchOption = $('#search-options').val();
@@ -53,6 +53,7 @@ function toUI() {
 } // end of toUI
 
 function toIDsearchUI() {
+    updated = false;
     let searchItem = $("#search-bar").val();
     let $searchResultBody = $('<tbody id="table-body"></tbody>');
 
@@ -65,7 +66,6 @@ function toIDsearchUI() {
         $searchResultBody.append(searchResult);
         $("#table-body").replaceWith($searchResultBody);
     });
-    updated = false;
 } // end of toIDsearchUI
 
 
@@ -74,9 +74,6 @@ function toIDsearchUI() {
 // });
 
 $(document).ready(function () {
-
-    var updated = false;
-
     const $viewAll = $("#view-all");
     const $updateBtn = $("#update-btn");
     const $updateId = $("#update-id");
@@ -171,8 +168,10 @@ $(document).ready(function () {
             },
             type: 'POST'
         });
+
         updated = false;
         viewAll();
+        alert(obj[name] + ' added');
     });
 
 
@@ -194,7 +193,7 @@ $(document).ready(function () {
         }
     });
     $logOut.on('click', e => {
-        location.replace("login.html");
+        location.replace("index.html");
         e.preventDefault();
     });
 });

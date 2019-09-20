@@ -1,10 +1,10 @@
 {
   "products": [
     {
-      "name": "Ford Cars",
-      "price": "44 million",
-      "quantity": "2",
-      "id": 1
+      "id": 1,
+      "name": "Expensive Ford",
+      "price": "18 million",
+      "quantity": "3"
     },
     {
       "name": "Venza",
@@ -59,6 +59,72 @@
       "price": "17 million",
       "quantity": "4",
       "id": 10
+    },
+    {
+      "name": "Range Rover Sport",
+      "price": "16 million",
+      "quantity": "2",
+      "id": 11
+    },
+    {
+      "name": "Chevrolet",
+      "price": "19 million",
+      "quantity": "1",
+      "id": 12
+    },
+    {
+      "name": "Honda",
+      "price": "2 million Dollars",
+      "quantity": "2",
+      "id": 13
+    },
+    {
+      "name": "Peupeot 307",
+      "price": "1.4 million",
+      "quantity": "8",
+      "id": 14
+    },
+    {
+      "name": "Peupeot 307",
+      "price": "1.4 million",
+      "quantity": "8",
+      "id": 15
+    },
+    {
+      "name": "Peupeot 504",
+      "price": "1.4 million",
+      "quantity": "8",
+      "id": 16
+    },
+    {
+      "name": "Mercedes Benz",
+      "price": "8.4 million",
+      "quantity": "5",
+      "id": 17
+    },
+    {
+      "name": "Mercedes Benz",
+      "price": "8.4 million",
+      "quantity": "5",
+      "id": 18
+    },
+    {
+      "name": "Mercedes Benz",
+      "price": "8.4 million",
+      "quantity": "5",
+      "id": 19
+    },
+    {
+      "name": "Mercedes Benz",
+      "price": "8.4 million",
+      "quantity": "5",
+      "id": 20
+    },
+    {
+      "name": "Self Driving Cars",
+      "price": "8.7 million",
+      "quantity": "7",
+      "id": 21
     }
   ],
   "admin": [
@@ -76,6 +142,11 @@
       "id": "2",
       "email": "decadev@decagon.com",
       "password": "decadev"
+    },
+    {
+      "id": 3,
+      "email": "admin",
+      "password": "admin"
     }
   ],
   "profile": {
